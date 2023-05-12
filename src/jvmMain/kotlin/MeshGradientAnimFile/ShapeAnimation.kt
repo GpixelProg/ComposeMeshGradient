@@ -1,30 +1,18 @@
-package MeshGradientAnim
+package MeshGradientAnimFile
 
-import MeshGradientAnim.Trajectory.TrajectoryElement
-import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.Image
+import MeshGradientAnimFile.Trajectory.TrajectoryElement
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.absoluteOffset
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.offset
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.rotate
-import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ImageBitmap
-import androidx.compose.ui.graphics.asSkiaBitmap
-import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.onGloballyPositioned
-import androidx.compose.ui.platform.LocalDensity
-import androidx.compose.ui.res.loadImageBitmap
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.useResource
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -81,7 +69,6 @@ fun ShapeAnimation(
                 canvasHeight = layoutCoordinates.size.height.toFloat()
             }
         ) {
-
             Box(
                 modifier = Modifier.absoluteOffset { IntOffset(x = 300.toInt(), y = 300.toInt()) }.rotate(rotate),
             ) {

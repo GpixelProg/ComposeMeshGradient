@@ -1,4 +1,4 @@
-package appdroidblue.randomsymbolsgenerator.meshGradientAnim.trajectory
+package meshGradientAnim.trajectory
 
 class Trajectory(private val trajectory: List<Float>) {
     private var speedAnimation: Float = 0f
@@ -32,12 +32,9 @@ class Trajectory(private val trajectory: List<Float>) {
         )
     }
 
-    fun setParam(
-        originalWidth: Float,
-        originalHeight: Float,
+    fun setResized(
         resizedWidth: Float,
         resizedHeight: Float,
-        speedAnimation: Float = 0f,
     ) {
         /**
          * Updated canvas size
@@ -45,7 +42,13 @@ class Trajectory(private val trajectory: List<Float>) {
         ResizeValues.resizedWidth = resizedWidth
         ResizeValues.resizedHeight = resizedHeight
 
+    }
 
+    fun setParam(
+        originalWidth: Float,
+        originalHeight: Float,
+        speedAnimation: Float = 0f,
+    ) {
         /**
          * Size of project canvas
          */

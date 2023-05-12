@@ -1,16 +1,14 @@
-package MeshGradientAnim
+package meshGradientAnim
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.FastOutSlowInEasing
-import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
-import androidx.compose.foundation.Image
-import appdroidblue.randomsymbolsgenerator.meshGradientAnim.trajectory.Trajectory
+import meshGradientAnim.trajectory.Trajectory
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.Icon
-import androidx.compose.material3.Text
+import androidx.compose.material.Icon
+import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -22,10 +20,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import appdroidblue.randomsymbolsgenerator.R
-import appdroidblue.randomsymbolsgenerator.meshGradientAnim.trajectory.INTERVAL_90_FPS
-import appdroidblue.randomsymbolsgenerator.meshGradientAnim.trajectory.moveProcessor
-import appdroidblue.randomsymbolsgenerator.meshGradientAnim.trajectoryList.trajectory0
+import meshGradientAnim.trajectory.INTERVAL_90_FPS
+import meshGradientAnim.trajectory.moveProcessor
+import meshGradientAnim.trajectoryList.trajectory0
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -49,15 +46,13 @@ fun ShapeAnimation(
     trajectory1.setParam(
         originalWidth = 1920f,
         originalHeight = 1080f,
-        resizedWidth = canvasWidth,
-        resizedHeight = canvasHeight,
         speedAnimation = 0.9f
     )
 
     /**
      * Animated Color
      */
-    var isColor = remember { mutableStateListOf(0, 0, 0) }
+    val isColor = remember { mutableStateListOf(0, 0, 0) }
 
     val animatedColor: Color by animateColorAsState(
         targetValue = when(isColor[0]) {
@@ -174,7 +169,7 @@ fun ShapeAnimation(
                     .rotate(rotate),
             ) {
                 Icon(
-                    painter = painterResource(R.drawable.shape0),
+                    painter = painterResource("shape0.svg"),
                     contentDescription = "",
                     modifier = Modifier.size(200.dp),
                     tint = animatedColor
@@ -187,7 +182,7 @@ fun ShapeAnimation(
                     .rotate(rotate),
             ) {
                 Icon(
-                    painter = painterResource(R.drawable.shape0),
+                    painter = painterResource("shape0.svg"),
                     contentDescription = "",
                     modifier = Modifier.size(200.dp),
                     tint = animatedColor1
@@ -200,7 +195,7 @@ fun ShapeAnimation(
                     .rotate(rotate),
             ) {
                 Icon(
-                    painter = painterResource(R.drawable.shape0),
+                    painter = painterResource("shape0.svg"),
                     contentDescription = "",
                     modifier = Modifier.size(200.dp),
                     tint = animatedColor2

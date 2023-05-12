@@ -1,6 +1,5 @@
-package appdroidblue.randomsymbolsgenerator.meshGradientAnim.trajectory
+package meshGradientAnim.trajectory
 
-import android.util.Log
 import kotlinx.coroutines.delay
 
 private var speedAnim = 0f
@@ -24,8 +23,8 @@ internal suspend fun moveProcessor(
     var index: Int = if (start == 0L) 0
     else ((trajectory.getPointsSize() - 1) / start).toInt()
 
-    Log.v("ANIM","Index:$index")
-    Log.v( "POS","X:$positionX, Y:$positionY")
+    println("ANIM Index:$index")
+    println("POS X:$positionX, Y:$positionY")
 
     while (true) {
         for (i in index until  trajectory.getPointsSize()) {

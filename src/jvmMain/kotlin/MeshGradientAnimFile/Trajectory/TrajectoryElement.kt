@@ -1,4 +1,4 @@
-package MeshGradientAnim.Trajectory
+package MeshGradientAnimFile.Trajectory
 
 import java.io.File
 import kotlin.system.measureNanoTime
