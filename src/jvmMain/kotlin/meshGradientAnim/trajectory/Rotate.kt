@@ -1,0 +1,2 @@
+package appdroidblue.randomsymbolsgenerator.meshGradientAnim.trajectory
+
